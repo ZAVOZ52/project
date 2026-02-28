@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Управление товарами</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+/>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="js/cart.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__top">
+        <h1 class="app__title">Управление товарами</h1>
+        <div class="app__total">
+          <span class="app__total-label">Итоговая стоимость:</span>
+          <span class="app__total-value">$900.00</span>
+        </div>
+      </header>
+
+      <main class="app__content">
+        <section class="product-card">
+          <div class="product-card__tools tools">
+            <button class="tools__filter" type="button">
+              <span class="tools__filter-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M3 5.5C3 4.67 3.67 4 4.5 4H19.5C20.33 4 21 4.67 21 5.5C21 5.88 20.86 6.24 21 5.5L14 13V19.2C14 19.64 13.71 20.02 13.29 20.14L10.29 21C9.65 21.18 9 20.7 9 20.03V13L3.39 6.7C3.14 6.43 3 6.07 3 5.7V5.5Z"
+                    fill="currentColor"
+                    opacity=".95"
+                  />
+                </svg>
+              </span>
+              <span class="tools__filter-text">Фильтр</span>
+            </button>
+
+            <form class="tools__search search-form" action="#" role="search">
+              <span class="search-form__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M10.5 3a7.5 7.5 0 1 0 4.62 13.41l3.73 3.73a1 1 0 0 0 1.41-1.41l-3.73-3.73A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Z"
+                    fill="currentColor"
+                    opacity=".9"
+                  />
+                </svg>
+              </span>
+              <input
+                class="search-form__input"
+                type="search"
+                placeholder="Поиск по наименованию и категории"
+                aria-label="Поиск по наименованию и категории"
+              />
+            </form>
+
+            <button class="tools__add" type="button">ДОБАВИТЬ ТОВАР</button>
+          </div>
+
+          <div class="product-card__table">
+            <table class="items-table">
+              <thead class="items-table__head">
+                <tr class="items-table__row items-table__row--head">
+                  <th class="items-table__th items-table__th--id" scope="col">ID</th>
+                  <th class="items-table__th" scope="col">НАИМЕНОВАНИЕ</th>
+                  <th class="items-table__th" scope="col">КАТЕГОРИЯ</th>
+                  <th class="items-table__th items-table__th--unit" scope="col">ЕД.ИЗМ</th>
+                  <th class="items-table__th items-table__th--qty" scope="col">КОЛИЧЕСТВО</th>
+                  <th class="items-table__th items-table__th--price" scope="col">ЦЕНА</th>
+                  <th class="items-table__th items-table__th--sum" scope="col">ИТОГ</th>
+                  <th class="items-table__th items-table__th--actions" scope="col"></th>
+                </tr>
+              </thead>
+              <tbody class="items-table__body">
+                <tr class="items-table__row">
+                  <td class="items-table__td items-table__td--id">246016548</td>
+                  <td class="items-table__td">
+                    <strong class="items-table__name">Навигационная система Soundmax</strong>
+                  </td>
+                  <td class="items-table__td">Техника для дома</td>
+                  <td class="items-table__td items-table__td--unit">шт</td>
+                  <td class="items-table__td items-table__td--qty">5</td>
+                  <td class="items-table__td items-table__td--price">$100</td>
+                  <td class="items-table__td items-table__td--sum">$500</td>
+                  <td class="items-table__td items-table__td--actions">
+                    <div class="item-actions">
+                      <button class="item-actions__btn" type="button" aria-label="Изображение">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                          <path
+                            d="M7 9a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm-2 12a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5Zm0-2h14a1 1 0 0 0 1-1v-1.5l-4.3-4.3a1 1 0 0 0-1.4 0L10 16l-2.3-2.3a1 1 0 0 0-1.4 0L4 15.99V18a1 1 0 0 0 1 1Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <button class="item-actions__btn" type="button" aria-label="Редактировать">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                          <path
+                            d="M4 20h4.17a2 2 0 0 0 1.42-.59l9.9-9.9a2 2 0 0 0 0-2.83l-2.17-2.17a2 2 0 0 0-2.83 0l-9.9 9.9A2 2 0 0 0 4 15.83V20Zm2-2v-1.34a1 1 0 0 1 .29-.7l9.9-9.9.83.83-9.9 9.9a1 1 0 0 1-.7.29H6Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <button class="item-actions__btn" type="button" aria-label="Удалить">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                          <path
+                            d="M9 3h6l1 2h4v2H4V5h4l1-2Zm1 6h2v10h-2V9Zm4 0h2v10h-2V9ZM6 9h2v10H6V9Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <footer class="product-card__footer">
+            <div class="pager">
+              <div class="pager__left">
+                <span class="pager__label">Показывать на странице:</span>
+                <button class="pager__select" type="button">
+                  <span class="pager__select-value">10</span>
+                  <span class="pager__chevron" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M7 10l5 5 5-5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+
+              <div class="pager__right">
+                <span class="pager__range">1-10 of 276</span>
+                <div class="pager__nav" aria-label="Пагинация">
+                  <button class="pager__nav-btn" type="button" aria-label="Назад">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M15 18l-6-6 6-6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <button class="pager__nav-btn" type="button" aria-label="Вперёд">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M9 6l6 6-6 6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </section>
+      </main>
+    </div>
+    <div class="modal modal--active">
+      <div class="modal__wrapper">
+        <header class="modal__top">
+          <h2 class="modal__title">ДОБАВИТЬ ТОВАР</h2>
+          <button class="modal__close" type="button" aria-label="Закрыть">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M19 5L5 19M5 5L19 19"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </header>
+
+        <div class="modal__content">
+          <form class="product-form" action="#" method="post">
+            <div class="product-form__grid">
+              <div class="product-form__container">
+                <label class="product-form__label">
+                  <span class="product-form__label-text">НАИМЕНОВАНИЕ</span>
+                  <input class="product-form__input" type="text" name="name" />
+                </label>
+                <label class="product-form__label">
+                  <span class="product-form__label-text">КАТЕГОРИЯ</span>
+                  <input
+                    class="product-form__input"
+                    type="text"
+                    name="category"
+                  />
+                </label>
+              </div>
+              <label class="product-form__label">
+                <span class="product-form__label-text">ОПИСАНИЕ</span>
+                <textarea class="product-form__textarea" name="description"></textarea>
+              </label>
+              <label class="product-form__label">
+                <span class="product-form__label-text">ЕДИНИЦЫ ИЗМЕРЕНИЯ</span>
+                <input class="product-form__input" type="text" name="unit" />
+              </label>
+              <label class="product-form__label">
+                <span class="product-form__label-text">КОЛИЧЕСТВО</span>
+                <input
+                  class="product-form__input"
+                  type="number"
+                  name="quantity"
+                />
+              </label>
+              <label class="product-form__label product-form__label--checkbox">
+                <span class="product-form__label-text">ДИСКОНТ</span>
+                <div class="product-form__discount-group">
+                  <input
+                  class="product-form__checkbox"
+                  type="checkbox"
+                  name="discount"
+                  />
+                  <input type="text" class="product-form__input">
+                </div>
+              </label>
+              <label class="product-form__label">
+                <span class="product-form__label-text">ЦЕНА</span>
+                <input class="product-form__input" type="number" name="price" />
+              </label>
+              <div class="product-form__group">
+                <span class="product-form__image-error">ИЗОБРАЖЕНИЕ НЕ ДОЛЖНО ПРЕВЫШАТЬ РАЗМЕР 1 МБ</span>
+                <button class="product-form__image-btn" type="button">
+                  ДОБАВИТЬ ИЗОБРАЖЕНИЕ
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <footer class="modal__footer">
+          <div class="product-form__total">
+            <span class="product-form__total-label">Итоговая стоимость:</span>
+            <span class="product-form__total-value">$ 900.00</span>
+          </div>
+          <button class="modal__add-btn" type="submit" form="product-form">
+            ДОБАВИТЬ ТОВАР
+          </button>
+        </footer>
+      </div>
+    </div>
+    <div class="modal modal--error">
+      <div class="modal__wrapper">
+        <header class="modal__top">
+          <button class="modal__close" type="button" aria-label="Закрыть">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M19 5L5 19M5 5L19 19"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        <div class="modal__content modal__content--centered">
+          <svg class="modal__error-icon" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <p class="modal__error-text">ЧТО-ТО ПОШЛО НЕ ТАК</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
